@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yum & You - The Art of Food</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="logo-container">
+        <img src="Images/Logo.png" class="logo-icon" alt="Yum & You Logo" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI0MCIgZmlsbD0iI2ZmY2UzYSIvPjwvc3ZnPg=='">
+        <span class="brand-text">Yum & You</span>
+    </div>
+    
+    <nav class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#products">Our menu</a>
+        <a href="#footer">Contact</a>
+    </nav>
+    
+    <div class="header-actions">
+        <button class="icon-btn cart-btn" onclick="openCart()">
+            🛒
+            <span class="cart-badge-header" id="cartCount">0</span>
+        </button>
+    </div>
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero">
+    <div class="hero-image-wrapper">
+        <div class="hero-image">
+            <img src="Images/Pasta.png" alt="Delicious Pasta">
+        </div>
+    </div>
+    <div class="hero-text">
+        <h1 class="hero-title">Addictively delicious,<br>
+            Surprisingly <span class="cursive-highlight">Tasty</span>
+        </h1>
+        <p class="hero-subtitle">Juicy, flavorful, and addictively delicious food that can be enjoyed by all!</p>
+        <button class="btn-primary" onclick="document.getElementById('products').scrollIntoView({behavior: 'smooth'})">
+            GET YOURS
+        </button>
+    </div>
+</section>
+
+
+<!-- PRODUCTS SECTION -->
+<section class="products-section" id="products">
+    <div class="products-header">
+        <h2 class="products-title">Our Best Selling Items</h2>
+    </div>
+
+    <div class="product-grid">
+        <!-- SANDWICH MERGED -->
+        <div class="product-card">
+            <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=500&q=60" alt="Sandwich">
+            </div>
+            <div class="product-content">
+                <div class="product-name">Delicious Sandwich</div>
+                <div class="product-desc">Freshly made sandwich with premium ingredients.</div>
+                <div class="product-variants">
+                    <select id="sandwichSelect" class="variant-select">
+                        <option value="Sandwich (Veg)|30">Veg</option>
+                        <option value="Sandwich (Non-Veg)|35">Non-Veg</option>
+                    </select>
+                </div>
+                <div class="product-footer">
+                    <div class="product-price">₹30 - ₹35</div>
+                    <button class="order-btn" onclick="addVariantItem('sandwichSelect')">Add to cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- PASTA MERGED -->
+        <div class="product-card">
+            <div class="product-image">
+                <img src="Images/Pasta.png" alt="Pasta">
+            </div>
+            <div class="product-content">
+                <div class="product-name">Delicious Pasta</div>
+                <div class="product-desc">Creamy and rich pasta made with authentic spices.</div>
+                <div class="product-variants">
+                    <select id="pastaSelect" class="variant-select">
+                        <option value="Pasta|45">Normal</option>
+                        <option value="Pasta + Extra Cheese|50">Extra Cheese</option>
+                    </select>
+                </div>
+                <div class="product-footer">
+                    <div class="product-price">₹45 - ₹50</div>
+                    <button class="order-btn" onclick="addVariantItem('pastaSelect')">Add to cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- CORN MERGED -->
+        <div class="product-card">
+            <div class="product-image">
+                <img src="Images/Corn.png" alt="Sweet Corn">
+            </div>
+            <div class="product-content">
+                <div class="product-name">Sweet Corn</div>
+                <div class="product-desc">Healthy and delicious sweet corn cups.</div>
+                <div class="product-variants">
+                    <select id="cornSelect" class="variant-select">
+                        <option value="Sweet Corn|20">Classic</option>
+                        <option value="Sweet Corn + Cheese & Masala|30">Cheese & Masala</option>
+                    </select>
+                </div>
+                <div class="product-footer">
+                    <div class="product-price">₹20 - ₹30</div>
+                    <button class="order-btn" onclick="addVariantItem('cornSelect')">Add to cart</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <img src="Images/Spicy Pine Apple.png" alt="Spicy Pineapple">
+            </div>
+            <div class="product-content">
+                <div class="product-name">Spicy Pineapple</div>
+                <div class="product-desc">Freshly cut pineapple chunks tossed in spices.</div>
+                <div class="product-footer">
+                    <div class="product-price">₹15</div>
+                    <button class="order-btn" onclick="addItem('Spicy Pineapple Pieces', 15)">Add to cart</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <img src="Images/Spicy Guava.png" alt="Spicy Guava">
+            </div>
+            <div class="product-content">
+                <div class="product-name">Spicy Guava</div>
+                <div class="product-desc">Farm-fresh guava slices with a spicy kick.</div>
+                <div class="product-footer">
+                    <div class="product-price">₹20</div>
+                    <button class="order-btn" onclick="addItem('Spicy Guava', 20)">Add to cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- JUICES -->
+        <div class="product-card">
+            <div class="product-image">
+                <img src="Images/Sharbath.png" alt="Sarbath">
+            </div>
+            <div class="product-content">
+                <div class="product-name">Sarbath</div>
+                <div class="product-desc">Refreshing and cooling traditional sweet drink.</div>
+                <div class="product-footer">
+                    <div class="product-price">₹20</div>
+                    <button class="order-btn" onclick="addItem('Sarbath', 20)">Add to cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- SHARJA MERGED -->
+        <div class="product-card">
+            <div class="product-image">
+                <img src="Images/Sharja boost.png" alt="Sharja">
+            </div>
+            <div class="product-content">
+                <div class="product-name">Sharja</div>
+                <div class="product-desc">Rich, creamy, and thick milkshakes.</div>
+                <div class="product-variants">
+                    <select id="sharjaSelect" class="variant-select">
+                        <option value="Sharjah Boost|40">Boost</option>
+                        <option value="Horlicks|40">Horlicks</option>
+                        <option value="Chocolate|35">Chocolate</option>
+                    </select>
+                </div>
+                <div class="product-footer">
+                    <div class="product-price">₹35 - ₹40</div>
+                    <button class="order-btn" onclick="addVariantItem('sharjaSelect')">Add to cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- VIEW CART BUTTON -->
+    <div style="text-align: center; margin-top: 50px;">
+        <button class="btn-primary" onclick="openCart()" style="padding: 18px 50px; font-size: 1.2rem;">
+            🛒 View Cart
+        </button>
+    </div>
+</section>
+
+<!-- CART MODAL -->
+<div class="modal" id="cartModal">
+    <div class="modal-content">
+        <span class="close" onclick="closeCart()">×</span>
+        
+        <h2>🛒 Your Order</h2>
+        <div id="cartItems"></div>
+        
+        <div class="total">
+            <span>Total</span>
+            <span>₹<span id="total">0</span></span>
+        </div>
+
+        <!-- EMAIL FORM (Using Web3Forms for 100% reliable AJAX delivery) -->
+        <form id="orderForm" action="https://api.web3forms.com/submit" method="POST">
+            <!-- Web3Forms Access Key -->
+            <input type="hidden" name="access_key" id="web3forms_key" value="2585b70e-91a9-4dce-9921-8d452e72c981">
+            
+            <input type="hidden" name="subject" value="New Yum & You Food Order">
+            <input type="hidden" name="from_name" value="Yum & You Website">
+            <input type="hidden" name="Order Details" id="orderDetails">
+            
+            <label for="customerName">Customer Name *</label>
+            <input type="text" name="Customer Name" id="customerName" placeholder="Enter your name" required>
+
+            <label for="mobileNumber">Mobile Number</label>
+            <input type="tel" name="Customer Mobile Number" id="mobileNumber" placeholder="Enter mobile number">
+
+            <label for="customerMessage">Message / Request</label>
+            <textarea name="Customer Message" id="customerMessage" placeholder="Any special requests?"></textarea>
+
+            <label for="orderTime">Order Date & Time</label>
+            <input type="text" name="Order Date & Time" id="orderTime" readonly>
+
+            <button type="submit" class="order-button-submit" id="orderBtn">
+                Place Order
+            </button>
+            <p class="note">Your order will be securely sent to Yum & You.</p>
+        </form>
+
+        <!-- SUCCESS MESSAGE -->
+        <div id="successMessage">
+            <h2>Order Sent Successfully! 🎉</h2>
+            <p>Thank you for ordering from Yum & You.</p>
+            <div class="success-summary" id="successSummaryDetails">
+                <!-- Order summary will be injected here -->
+            </div>
+            <button class="order-button-submit" onclick="closeCart()" style="margin-top: 25px;">Close</button>
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer id="footer">
+    <div class="footer-brand">Yum & You</div>
+    <p>Good Food • Good Vibes • Great Times ❤️</p>
+    
+    <div style="margin-top: 30px;">
+        <h3 style="color: var(--text-dark); margin-bottom: 15px; font-weight: 900; text-transform: uppercase;">Contact Us</h3>
+        <div class="contact-section" style="margin-top: 0;">
+            <div class="contact-card">
+                Shyma S M <br> <span>9629640095</span>
+            </div>
+            <div class="contact-card">
+                Dharshni <br> <span>9442902944</span>
+            </div>
+            <div class="contact-card">
+                Bhavani <br> <span>6374995098</span>
+            </div>
+        </div>
+    </div>
+    
+    <p style="font-size: 0.85rem; margin-top: 30px;">&copy; 2026 Yum & You. All rights reserved.</p>
+</footer>
+
+<!-- JS File -->
+<script src="script.js"></script>
+</body>
+</html>
