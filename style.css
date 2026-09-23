@@ -883,7 +883,21 @@ input:focus, textarea:focus {
 }
 @media(max-width: 600px) {
     .nav-links { display: none; }
-    .hero-title { font-size: 2.5rem; }
-    .btn-whatsapp { padding: 15px 30px; font-size: 1.2rem; }
+    .hero-title { font-size: 2.2rem; }
+    .btn-whatsapp { padding: 15px; font-size: 1.1rem; }
     .hero-image-wrapper { margin-top: 30px; }
+    .section-title, .offers-section .section-title { font-size: 2.2rem; }
+    .offers-section, .affordable-section, .menu-section, .features-section, .delivery-section, .gallery-section, .contact-section {
+        padding: 60px 5%;
+    }
+    .huge-price { font-size: 4.5rem; -webkit-text-stroke: 2px var(--primary-yellow); }
+    .affordable-text { font-size: 2.2rem; }
+    .delivery-title { font-size: 2.5rem; }
+    .menu-grid, .offers-grid, .features-grid, .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    .contact-buttons { flex-direction: column; gap: 15px; }
+    .contact-buttons a, .contact-buttons button { width: 100%; justify-content: center; display: flex; }
+    .contact-list { flex-direction: column; }
+    .contact-list > div { width: 100%; }
 }
