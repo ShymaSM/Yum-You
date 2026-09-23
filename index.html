@@ -30,8 +30,13 @@
     </div>
 </header>
 
+<!-- VOUCHER BANNER -->
+<section class="voucher-banner" style="padding-top: 100px; text-align: center; background: var(--bg-hero);">
+    <img src="Images/vocher.jpeg" alt="Yum & You Voucher" style="width: 90%; max-width: 1000px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+</section>
+
 <!-- HERO SECTION -->
-<section class="hero">
+<section class="hero" style="padding-top: 40px;">
     <div class="hero-image-wrapper">
         <div class="hero-image">
             <img src="Images/Pasta.png" alt="Delicious Pasta">
@@ -56,6 +61,38 @@
     </div>
 
     <div class="product-grid">
+        <!-- OFFER COMBO -->
+        <div class="product-card offer-card">
+            <div class="product-image">
+                <img src="Images/Pasta.png" alt="Offer Combo" style="object-fit: cover; border-radius: 12px;">
+                <div class="offer-badge">SPECIAL COMBO</div>
+            </div>
+            <div class="product-content">
+                <div class="product-name">Mega Offer Combo</div>
+                <div class="product-desc">Sandwich + Pasta + Sharja Boost</div>
+                <div class="product-footer">
+                    <div class="product-price">₹100 <del style="font-size: 0.8rem; color: var(--text-muted);">₹120</del></div>
+                    <button class="order-btn" onclick="addItem('Mega Offer Combo', 100)">Add to cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- BUY 3 GET 1 FREE COMBO -->
+        <div class="product-card offer-card">
+            <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=500&q=60" alt="Sandwich Combo" style="object-fit: cover; border-radius: 12px;">
+                <div class="offer-badge" style="background: linear-gradient(135deg, #1dd1a1, #10ac84);">FREE SHARJA!</div>
+            </div>
+            <div class="product-content">
+                <div class="product-name">Party Combo</div>
+                <div class="product-desc">Buy 3 Veg Sandwiches, Get 1 Sharja Free!</div>
+                <div class="product-footer">
+                    <div class="product-price">₹90 <del style="font-size: 0.8rem; color: var(--text-muted);">₹130</del></div>
+                    <button class="order-btn" onclick="addItem('3 Veg Sandwich + Free Sharja', 90)">Add to cart</button>
+                </div>
+            </div>
+        </div>
+
         <!-- SANDWICH MERGED -->
         <div class="product-card">
             <div class="product-image">
@@ -267,6 +304,11 @@
     
     <p style="font-size: 0.85rem; margin-top: 30px;">&copy; 2026 Yum & You. All rights reserved.</p>
 </footer>
+
+<!-- WHATSAPP BUTTON -->
+<a href="https://wa.me/919629640095" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon">
+</a>
 
 <!-- JS File -->
 <script src="script.js"></script>
