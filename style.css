@@ -911,3 +911,59 @@ input:focus, textarea:focus {
     .contact-list { flex-direction: column; }
     .contact-list > div { width: 100%; }
 }
+
+/* ================= MOBILE STICKY CTA ================= */
+.mobile-sticky-cta {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(20, 20, 20, 0.95);
+    backdrop-filter: blur(10px);
+    border-top: 2px solid var(--primary-pink);
+    padding: 15px 20px;
+    z-index: 1000;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 -5px 20px rgba(255, 20, 120, 0.2);
+    cursor: pointer;
+}
+
+.cta-cart-info {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary-yellow);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cta-action {
+    background: linear-gradient(90deg, var(--primary-pink), #ff4d94);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: 900;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+@media(max-width: 600px) {
+    .mobile-sticky-cta { display: flex; }
+    /* Prevent bottom CTA from overlapping important footer content by adding padding to body */
+    body { padding-bottom: 70px; }
+}
+
+/* ================= CART ANIMATION ================= */
+.cart-bounce {
+    animation: cartBounce 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes cartBounce {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.5) translateY(-5px); color: var(--primary-pink); }
+    100% { transform: scale(1); }
+}

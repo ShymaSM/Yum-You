@@ -51,10 +51,27 @@ function updateCartUI() {
     const cartCountBadge = document.getElementById("cartCount");
     const totalElement = document.getElementById("total");
     const orderBtn = document.getElementById("orderBtn");
+    const stickyItemCount = document.getElementById("stickyItemCount");
+    const stickyCartIcon = document.querySelector(".sticky-cart-icon");
 
     // Update floating badge count
     const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
     if (cartCountBadge) cartCountBadge.innerText = totalItems;
+    if (stickyItemCount) stickyItemCount.innerText = totalItems;
+
+    // Trigger bounce animation on cart badges/icons when item is added
+    if (totalItems > 0) {
+        if (cartCountBadge) {
+            cartCountBadge.classList.remove("cart-bounce");
+            void cartCountBadge.offsetWidth; // Trigger reflow
+            cartCountBadge.classList.add("cart-bounce");
+        }
+        if (stickyCartIcon) {
+            stickyCartIcon.classList.remove("cart-bounce");
+            void stickyCartIcon.offsetWidth; // Trigger reflow
+            stickyCartIcon.classList.add("cart-bounce");
+        }
+    }
     
     // If empty
     if (cart.length === 0) {
