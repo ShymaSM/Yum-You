@@ -2,13 +2,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&family=Caveat:wght@700&display=swap');
 
 :root {
-    --bg-main: #ffffff;
-    --bg-hero: #f4f6f8;
+    --bg-main: #121212;
+    --bg-hero: #1e1e1e;
     --bg-header: #f5989c; /* Pink */
     --primary-peach: #f6af90;
-    --text-dark: #4a4a4a;
-    --text-muted: #888888;
-    --border-color: #eaeaea;
+    --text-dark: #ffffff;
+    --text-muted: #aaaaaa;
+    --border-color: #333333;
     --transition-speed: 0.3s;
 }
 
