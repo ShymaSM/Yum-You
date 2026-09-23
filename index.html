@@ -5,16 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YUM AND YOU | Crazy Good Prices</title>
     <link rel="stylesheet" href="style.css">
-</head>
-<body>
+<!-- TOP BAR WRAPPER -->
+<div id="top-bar-wrapper" style="position: absolute; top: 0; left: 0; width: 100%; z-index: 1001;">
+    <!-- ANNOUNCEMENT BAR -->
+    <div style="width: 100%; background: linear-gradient(90deg, var(--primary-pink), var(--primary-yellow)); color: #000; display: flex; justify-content: center; align-items: center; font-weight: 900; font-size: 0.9rem; padding: 8px 15px; box-shadow: 0 2px 10px rgba(0,0,0,0.2); text-align: center; line-height: 1.4;">
+        🔥 SPECIAL OFFER: Buy 3 Veg Sandwiches, Get 1 Boost Sharja FREE! &nbsp;<a href="#offers" style="color: #000; text-decoration: underline; white-space: nowrap;">Grab it now!</a>
+    </div>
 
-<!-- ANNOUNCEMENT BAR -->
-<div style="position: absolute; top: 0; left: 0; width: 100%; height: 35px; background: linear-gradient(90deg, var(--primary-pink), var(--primary-yellow)); color: #000; display: flex; justify-content: center; align-items: center; font-weight: 900; font-size: 0.9rem; z-index: 1001; box-shadow: 0 2px 10px rgba(0,0,0,0.2);">
-    🔥 SPECIAL OFFER: Buy 3 Veg Sandwiches, Get 1 Boost Sharja FREE! &nbsp;<a href="#offers" style="color: #000; text-decoration: underline;">Grab it now!</a>
-</div>
-
-<!-- HEADER -->
-<header style="top: 35px;">
+    <!-- HEADER -->
+    <header style="position: relative; top: 0; padding: 15px 5%;">
     <div class="logo-container">
         <img src="Images/Logo.png" class="logo-icon" alt="Yum & You Logo" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI0MCIgZmlsbD0iI2ZmY2UzYSIvPjwvc3ZnPg=='">
         <span class="brand-text">Yum & You</span>
@@ -34,6 +33,7 @@
         </button>
     </div>
 </header>
+</div>
 
 <!-- HERO SECTION -->
 <section class="hero" id="home">
@@ -332,6 +332,17 @@
 <a href="https://wa.me/919629640095" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon">
 </a>
+
+<!-- MOBILE STICKY CTA -->
+<div class="mobile-sticky-cta" onclick="openCart()">
+    <div class="cta-cart-info">
+        <span class="sticky-cart-icon">🛒</span> 
+        <span id="stickyItemCount">0</span> Items
+    </div>
+    <div class="cta-action">
+        VIEW CART <span>→</span>
+    </div>
+</div>
 
 <!-- JS File -->
 <script src="script.js"></script>
