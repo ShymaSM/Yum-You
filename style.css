@@ -344,6 +344,18 @@ header {
     animation: pulse 2s infinite;
 }
 
+.offer-combo-card {
+    overflow: visible !important;
+    animation: float-glow 3s ease-in-out infinite;
+    border: 2px solid var(--primary-pink);
+}
+
+@keyframes float-glow {
+    0% { transform: translateY(0); box-shadow: 0 5px 15px rgba(255, 20, 120, 0.2); border-color: var(--primary-pink); }
+    50% { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(255, 217, 0, 0.4); border-color: var(--primary-yellow); }
+    100% { transform: translateY(0); box-shadow: 0 5px 15px rgba(255, 20, 120, 0.2); border-color: var(--primary-pink); }
+}
+
 @keyframes pulse {
     0% { transform: rotate(5deg) scale(1); }
     50% { transform: rotate(5deg) scale(1.1); }
