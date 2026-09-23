@@ -882,7 +882,8 @@ input:focus, textarea:focus {
     .huge-price { font-size: 8rem; }
 }
 @media(max-width: 600px) {
-    .nav-links { display: none; }
+    header { flex-direction: column; gap: 15px; padding: 15px; text-align: center; }
+    .nav-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
     .hero-title { font-size: 2.2rem; }
     .btn-whatsapp { padding: 15px; font-size: 1.1rem; }
     .hero-image-wrapper { margin-top: 30px; }
@@ -893,9 +894,6 @@ input:focus, textarea:focus {
     .huge-price { font-size: 4.5rem; -webkit-text-stroke: 2px var(--primary-yellow); }
     .affordable-text { font-size: 2.2rem; }
     .delivery-title { font-size: 2.5rem; }
-    .menu-grid, .offers-grid, .features-grid, .gallery-grid {
-        grid-template-columns: 1fr;
-    }
     .contact-buttons { flex-direction: column; gap: 15px; }
     .contact-buttons a, .contact-buttons button { width: 100%; justify-content: center; display: flex; }
     .contact-list { flex-direction: column; }
