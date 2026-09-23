@@ -195,9 +195,10 @@ header {
 .hero {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    text-align: center;
     padding: 80px 5% 100px;
-    background: radial-gradient(circle at top right, #2a0b16, #0B0B0B);
+    background: radial-gradient(circle at center, #2a0b16, #0B0B0B);
     position: relative;
     overflow: hidden;
 }
@@ -241,6 +242,7 @@ header {
 .hero-buttons {
     display: flex;
     gap: 20px;
+    justify-content: center;
 }
 
 .hero-image-wrapper {
