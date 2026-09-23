@@ -19,6 +19,7 @@
         <a href="#home">Home</a>
         <a href="#offers">Offers</a>
         <a href="#menu">Menu</a>
+        <a href="#offers">Combos</a>
         <a href="#contact">Contact</a>
     </nav>
     
@@ -51,38 +52,34 @@
     <h2 class="section-title" style="color: var(--bg-main);">SPECIAL OFFERS</h2>
     <p class="section-subtitle" style="color: #333;">These deals won't last forever!</p>
     
-    <div class="offers-grid">
+    <div class="offers-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; margin-top: 50px;">
         <!-- OFFER 1 -->
-        <div class="offer-card">
-            <div class="offer-badge">LIMITED OFFER</div>
-            <div class="offer-img-container">
-                <img src="Images/Pasta.png" alt="Combo Offer">
-            </div>
-            <div class="offer-content">
-                <h3 class="offer-title">₹150 COMBO OFFER</h3>
-                <p class="offer-desc">4 Pc Sandwich + 1 Bowl Pasta + 1 Sarbath + 1 Boost Sharja</p>
-                <div class="offer-price-row">
-                    <span class="offer-old-price">₹210</span>
-                    <span class="offer-new-price">₹150</span>
-                </div>
-                <button class="btn-primary" style="width: 100%;" onclick="addItem('₹150 Super Combo', 150)">ORDER NOW</button>
+        <div class="menu-card" style="margin-top: 60px;">
+            <div class="offer-badge" style="background: linear-gradient(45deg, var(--primary-pink), var(--primary-yellow)); font-size: 0.9rem; padding: 5px 15px; top: -15px; right: -10px; transform: rotate(10deg); color: #000;">SPECIAL COMBO</div>
+            <div class="menu-img"><img src="Images/Pasta.png" alt="Combo Offer"></div>
+            <h3 class="menu-name">₹150 COMBO</h3>
+            <p class="menu-desc" style="min-height: 50px;">4 Pc Sandwich + 1 Bowl Pasta + 1 Sarbath + 1 Boost Sharja</p>
+            <div class="menu-footer" style="margin-top: 15px; border-top: 1px solid #333; padding-top: 15px;">
+                <span class="menu-price" style="display: flex; align-items: center; gap: 5px;">
+                    <span style="text-decoration: line-through; color: #888; font-size: 1rem;">₹210</span>
+                    ₹150
+                </span>
+                <button class="menu-btn" onclick="addItem('₹150 Super Combo', 150)">ADD +</button>
             </div>
         </div>
         
         <!-- OFFER 2 -->
-        <div class="offer-card">
-            <div class="offer-badge" style="background: var(--bg-main); color: var(--primary-yellow); border: 2px solid var(--primary-yellow);">CRAZY DEAL</div>
-            <div class="offer-img-container">
-                <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=500&q=60" alt="Sandwich Combo">
-            </div>
-            <div class="offer-content">
-                <h3 class="offer-title">BUY 3 GET 1 FREE</h3>
-                <p class="offer-desc">Buy 3 Veg Sandwiches, Get 1 Boost Sharja completely FREE!</p>
-                <div class="offer-price-row">
-                    <span class="offer-old-price">₹130</span>
-                    <span class="offer-new-price">₹90</span>
-                </div>
-                <button class="btn-primary" style="width: 100%;" onclick="addItem('Buy 3 Sandwich Get 1 Sharja Free', 90)">ORDER NOW</button>
+        <div class="menu-card" style="margin-top: 60px;">
+            <div class="offer-badge" style="background: linear-gradient(45deg, var(--primary-yellow), var(--primary-pink)); font-size: 0.9rem; padding: 5px 15px; top: -15px; right: -10px; transform: rotate(10deg); color: #000;">SPECIAL OFFER</div>
+            <div class="menu-img"><img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=500&q=60" alt="Sandwich Combo"></div>
+            <h3 class="menu-name">BUY 3 GET 1</h3>
+            <p class="menu-desc" style="min-height: 50px;">Buy 3 Veg Sandwiches, Get 1 Boost Sharja completely FREE!</p>
+            <div class="menu-footer" style="margin-top: 15px; border-top: 1px solid #333; padding-top: 15px;">
+                <span class="menu-price" style="display: flex; align-items: center; gap: 5px;">
+                    <span style="text-decoration: line-through; color: #888; font-size: 1rem;">₹130</span>
+                    ₹90
+                </span>
+                <button class="menu-btn" onclick="addItem('Buy 3 Sandwich Get 1 Sharja Free', 90)">ADD +</button>
             </div>
         </div>
     </div>
