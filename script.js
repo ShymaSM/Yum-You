@@ -270,3 +270,20 @@ if (closeBtn) {
 document.addEventListener("DOMContentLoaded", () => {
     updateCartUI();
 });
+
+/* GALLERY MODAL FUNCTIONS */
+function openImageModal(imageSrc) {
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImage");
+    if(modal && modalImg) {
+        modalImg.src = imageSrc;
+        modal.style.display = "flex";
+    }
+}
+
+function closeImageModal() {
+    const modal = document.getElementById("imageModal");
+    if(modal) {
+        modal.style.display = "none";
+    }
+}
