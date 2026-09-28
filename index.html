@@ -399,6 +399,11 @@
             <input type="hidden" name="Order Details" id="orderDetails">
             
             <input type="text" name="Customer Name" id="customerName" placeholder="Customer Name *" required>
+            <input type="text" name="Department" id="department" placeholder="Department *" required>
+            <select name="Order Type" id="orderType" onchange="updateCartUI()" style="width: 100%; padding: 12px; margin-bottom: 15px; background: #222; color: white; border: 1px solid #333; border-radius: 8px; outline: none; font-family: inherit;">
+                <option value="Dine In">Dine In</option>
+                <option value="Take Away">Take Away (+₹10)</option>
+            </select>
             <input type="tel" name="Customer Mobile Number" id="mobileNumber" placeholder="Mobile Number">
             <textarea name="Customer Message" id="customerMessage" placeholder="Any special requests?"></textarea>
             

@@ -91,7 +91,6 @@ function updateCartUI() {
     let total = 0;
     cartItems.innerHTML = "";
 
-    // Render items
     cart.forEach((item, index) => {
         let itemTotal = item.price * item.quantity;
         total += itemTotal;
@@ -110,6 +109,22 @@ function updateCartUI() {
             </div>
         `;
     });
+
+    const orderType = document.getElementById("orderType");
+    if (orderType && orderType.value === "Take Away") {
+        total += 10;
+        cartItems.innerHTML += `
+            <div class="cart-item">
+                <div class="cart-item-details">
+                    <strong>Take Away Charge</strong>
+                    <small>Additional Cost</small>
+                </div>
+                <div class="quantity">
+                    <span>${formatCurrency(10)}</span>
+                </div>
+            </div>
+        `;
+    }
 
     totalElement.innerText = total.toFixed(2);
 }
@@ -181,6 +196,13 @@ if (orderForm) {
             total += itemTotal;
             orderText += `${item.name} | Qty: ${item.quantity} | ${formatCurrency(itemTotal)}\n`;
         });
+        
+        const orderType = document.getElementById("orderType");
+        if (orderType && orderType.value === "Take Away") {
+            total += 10;
+            orderText += `Take Away Charge | Qty: 1 | ${formatCurrency(10)}\n`;
+        }
+
         orderText += `\nTOTAL AMOUNT: ${formatCurrency(total)}`;
         
         // Set hidden field value
@@ -235,12 +257,22 @@ function showSuccessMessage(orderText, totalAmount) {
     successDiv.style.display = "block";
     
     // Format order summary for display
-    const summaryHtml = cart.map(item => `
+    let summaryHtml = cart.map(item => `
         <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
             <span>${item.quantity}x ${item.name}</span>
             <span>${formatCurrency(item.price * item.quantity)}</span>
         </div>
     `).join('');
+    
+    const orderType = document.getElementById("orderType");
+    if (orderType && orderType.value === "Take Away") {
+        summaryHtml += `
+        <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+            <span>1x Take Away Charge</span>
+            <span>${formatCurrency(10)}</span>
+        </div>
+        `;
+    }
     
     document.getElementById("successSummaryDetails").innerHTML = `
         ${summaryHtml}
